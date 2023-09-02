@@ -1,541 +1,176 @@
-Aliases
-g
+## Git Aliases
 
-git
-ga
+### Basic Git Commands
 
-git add
-gaa
+- `g` - Alias for `git`
+- `ga` - Alias for `git add`
+- `gaa` - Alias for `git add --all`
+- `gapa` - Alias for `git add --all`
+- `gau` - Alias for `git add --update`
+- `gav` - Alias for `git add --verbose`
+- `gap` - Alias for `git add --patch`
 
-git add --all
-gapa
+### Git Apply
 
-git add --patch
-gau
+- `gapt` - Alias for `git apply`
+- `gb` - Alias for `git apply --3way`
 
-git add --update
-gav
+### Git Branch
 
-git add --verbose
-gap
+- `gba` - Alias for `git branch`
+- `gbd` - Alias for `git branch -a`
+- `gbda` - Alias for `git branch -d`
+- `gbD` - Alias for complex branch cleanup command (see documentation)
+- `gbl` - Alias for `git branch -D`
 
-git apply
-gapt
+### Git Blame
 
-git apply --3way
-gb
+- `gbnm` - Alias for `git blame -b -w`
 
-git branch
-gba
+### Other Branch Commands
 
-git branch -a
-gbd
+- `gbr` - Alias for `git branch --no-merged`
+- `gbs` - Alias for `git branch --remote`
 
-git branch -d
-gbda
+### Git Bisect
 
-git branch --no-color --merged | grep -vE "^([+]|\s($(git_main_branch)|$(git_develop_branch))\s*$)" | xargs git branch -d 2>/dev/null
-gbD
+- `gbsb` - Alias for `git bisect`
+- `gbsg` - Alias for `git bisect bad`
+- `gbsr` - Alias for `git bisect good`
+- `gbss` - Alias for `git bisect reset`
+- `gc` - Alias for `git bisect start`
 
-git branch -D
-gbl
+### Git Commit
 
-git blame -b -w
-gbnm
+- `gc!` - Alias for `git commit -v`
+- `gcn!` - Alias for `git commit -v --amend`
+- `gca` - Alias for `git commit -v --no-edit --amend`
+- `gca!` - Alias for `git commit -v -a`
+- `gcan!` - Alias for `git commit -v -a --amend`
+- `gcans!` - Alias for `git commit -v -a --no-edit --amend`
+- `gcam` - Alias for `git commit -v -a -s --no-edit --amend`
+- `gcas` - Alias for `git commit -a -m`
+- `gcasm` - Alias for `git commit -a -s`
+- `gcsm` - Alias for `git commit -a -s -m`
+- `gcb` - Alias for `git commit -s -m`
 
-git branch --no-merged
-gbr
+### Git Checkout
 
-git branch --remote
-gbs
+- `gcf` - Alias for `git checkout -b`
 
-git bisect
-gbsb
+### Git Config
 
-git bisect bad
-gbsg
+- `gcl` - Alias for `git config --list`
 
-git bisect good
-gbsr
+### Git Clone
 
-git bisect reset
-gbss
+- `gccd` - Alias for `git clone --recurse-submodules`
+- `gclean` - Alias for `git clone --recurse-submodules "$@" && cd "$(basename $_ .git)"`
 
-git bisect start
-gc
+### Git Clean
 
-git commit -v
-gc!
+- `gcm` - Alias for `git reset --hard && git clean -dffx`
 
-git commit -v --amend
-gcn!
+### Git Checkout Branch
 
-git commit -v --no-edit --amend
-gca
+- `gcd` - Alias for `git checkout $(git_main_branch)`
+- `gcmsg` - Alias for `git checkout $(git_develop_branch)`
 
-git commit -v -a
-gca!
+### Git Commit Messages
 
-git commit -v -a --amend
-gcan!
+- `gco` - Alias for `git commit -m`
+- `gcor` - Alias for `git checkout`
+- `gcount` - Alias for `git checkout --recurse-submodules`
 
-git commit -v -a --no-edit --amend
-gcans!
+### Git Shortlog
 
-git commit -v -a -s --no-edit --amend
-gcam
+- `gcp` - Alias for `git shortlog -sn`
 
-git commit -a -m
-gcas
+### Git Cherry-Pick
 
-git commit -a -s
-gcasm
+- `gcpa` - Alias for `git cherry-pick`
+- `gcpc` - Alias for `git cherry-pick --abort`
+- `gcs` - Alias for `git cherry-pick --continue`
 
-git commit -a -s -m
-gcsm
+### Git Signing
 
-git commit -s -m
-gcb
+- `gd` - Alias for `git commit -S`
 
-git checkout -b
-gcf
+### Git Diff
 
-git config --list
-gcl
+- `gd` - Alias for `git diff`
+- `gdca` - Alias for `git diff --cached`
+- `gdcw` - Alias for `git diff --cached --word-diff`
+- `gdct` - Alias for `git diff --cached --word-diff`
+- `gds` - Alias for `git describe --tags $(git rev-list --tags --max-count=1)`
+- `gdt` - Alias for `git diff --staged`
+- `gdnolock` - Alias for complex diff command (see documentation)
+- `gdup` - Alias for `git diff @{upstream}`
+- `gdv` - Alias for complex diff command (see documentation)
+- `gdw` - Alias for `git diff --word-diff`
 
-git clone --recurse-submodules
-gccd
+### Git Fetch
 
-git clone --recurse-submodules "$@" && cd "$(basename $_ .git)"
-gclean
+- `gf` - Alias for `git fetch`
+- `gfa` - Alias for `git fetch --all --prune`
 
-git clean -id
-gpristine
+### Git List Files
 
-git reset --hard && git clean -dffx
-gcm
+- `gfg` - Alias for complex list files command (see documentation)
 
-git checkout $(git_main_branch)
-gcd
+### Git Fetch Origin
 
-git checkout $(git_develop_branch)
-gcmsg
+- `gfo` - Alias for `git fetch origin`
 
-git commit -m
-gco
+### Git GUI
 
-git checkout
-gcor
+- `gg` - Alias for `git gui citool`
+- `gga` - Alias for `git gui citool --amend`
 
-git checkout --recurse-submodules
-gcount
+### Git Push
 
-git shortlog -sn
-gcp
+- `ggf` - Alias for `git push --force origin $(current_branch)`
+- `ggfl` - Alias for `git push --force-with-lease origin $(current_branch)`
 
-git cherry-pick
-gcpa
+### Git Pull
 
-git cherry-pick --abort
-gcpc
+- `ggp` - Alias for `git pull origin $(current_branch)`
+- `ggpnp` - Alias for complex pull command (see documentation)
 
-git cherry-pick --continue
-gcs
+### Git Pull Current Branch
 
-git commit -S
-gd
+- `ggpull` - Alias for complex pull command (see documentation)
+- `ggpur` - Alias for `git pull --rebase origin $(current_branch)`
 
-git diff
-gdca
+### Git Push Current Branch
 
-git diff --cached
-gdcw
+- `ggpush` - Alias for complex push command (see documentation)
+- `ggsup` - Alias for `git branch --set-upstream-to=origin/$(git_current_branch)`
 
-git diff --cached --word-diff
-gdct
+### Git Pull Rebase
 
-git describe --tags $(git rev-list --tags --max-count=1)
-gds
+- `gpsup` - Alias for `git pull --rebase origin $(current_branch)`
 
-git diff --staged
-gdt
+### Git Push Set Upstream
 
-git diff-tree --no-commit-id --name-only -r
-gdnolock
+- `ghh` - Alias for `git push --set-upstream origin $(git_current_branch)`
 
-git diff $@ ":(exclude)package-lock.json" ":(exclude)*.lock"
-gdup
+### Git Help
 
-git diff @{upstream}
-gdv
+- `gignore` - Alias for `git help`
 
-git diff -w $@ | view -
-gdw
+### Git Update Index
 
-git diff --word-diff
-gf
+- `gignored` - Alias for `git update-index --assume-unchanged`
 
-git fetch
-gfa
+### Git List Files (Lowercase)
 
-git fetch --all --prune
-gfg
+- `gignored` - Alias for complex list files command (see documentation)
 
-git ls-files | grep
-gfo
+### Git SVN Dcommit Push
 
-git fetch origin
-gg
+- `git-svn-dcommit-push` - Alias for complex SVN dcommit and push command (see documentation)
 
-git gui citool
-gga
+### Gitk
 
-git gui citool --amend
-ggf
-
-git push --force origin $(current_branch)
-ggfl
-
-git push --force-with-lease origin $(current_branch)
-ggl
-
-git pull origin $(current_branch)
-ggp
-
-git push origin $(current_branch)
-ggpnp
-
-ggl && ggp
-ggpull
-
-git pull origin "$(git_current_branch)"
-ggpur
-
-ggu
-ggpush
-
-git push origin "$(git_current_branch)"
-ggsup
-
-git branch --set-upstream-to=origin/$(git_current_branch)
-ggu
-
-git pull --rebase origin $(current_branch)
-gpsup
-
-git push --set-upstream origin $(git_current_branch)
-ghh
-
-git help
-gignore
-
-git update-index --assume-unchanged
-gignored
-
-git ls-files -v | grep "^[[:lower:]]"
-git-svn-dcommit-push
-
-git svn dcommit && git push github $(git_main_branch):svntrunk
-gk
-
-gitk --all --branches &!
-gke
-
-gitk --all $(git log -g --pretty=%h) &!
-gl
-
-git pull
-glg
-
-git log --stat
-glgp
-
-git log --stat -p
-glgg
-
-git log --graph
-glgga
-
-git log --graph --decorate --all
-glgm
-
-git log --graph --max-count=10
-glo
-
-git log --oneline --decorate
-glol
-
-git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'
-glols
-
-git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --stat
-glod
-
-git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset'
-glods
-
-git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --date=short
-glola
-
-git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --all
-glog
-
-git log --oneline --decorate --graph
-gloga
-
-git log --oneline --decorate --graph --all
-glp
-
-git log --pretty=<format>
-gm
-
-git merge
-gmom
-
-git merge origin/$(git_main_branch)
-gmtl
-
-git mergetool --no-prompt
-gmtlvim
-
-git mergetool --no-prompt --tool=vimdiff
-gmum
-
-git merge upstream/$(git_main_branch)
-gma
-
-git merge --abort
-gp
-
-git push
-gpd
-
-git push --dry-run
-gpf
-
-git push --force-with-lease
-gpf!
-
-git push --force
-gpoat
-
-git push origin --all && git push origin --tags
-gpr
-
-git pull --rebase
-gpu
-
-git push upstream
-gpv
-
-git push -v
-gr
-
-git remote
-gra
-
-git remote add
-grb
-
-git rebase
-grba
-
-git rebase --abort
-grbc
-
-git rebase --continue
-grbd
-
-git rebase $(git_develop_branch)
-grbi
-
-git rebase -i
-grbm
-
-git rebase $(git_main_branch)
-grbom
-
-git rebase origin/$(git_main_branch)
-grbo
-
-git rebase --onto
-grbs
-
-git rebase --skip
-grev
-
-git revert
-grh
-
-git reset
-grhh
-
-git reset --hard
-groh
-
-git reset origin/$(git_current_branch) --hard
-grm
-
-git rm
-grmc
-
-git rm --cached
-grmv
-
-git remote rename
-grrm
-
-git remote remove
-grs
-
-git restore
-grset
-
-git remote set-url
-grss
-
-git restore --source
-grst
-
-git restore --staged
-grt
-
-cd "$(git rev-parse --show-toplevel || echo .)"
-gru
-
-git reset --
-grup
-
-git remote update
-grv
-
-git remote -v
-gsb
-
-git status -sb
-gsd
-
-git svn dcommit
-gsh
-
-git show
-gsi
-
-git submodule init
-gsps
-
-git show --pretty=short --show-signature
-gsr
-
-git svn rebase
-gss
-
-git status -s
-gst
-
-git status
-gsta
-
-git stash push
-gsta
-
-git stash save
-gstaa
-
-git stash apply
-gstc
-
-git stash clear
-gstd
-
-git stash drop
-gstl
-
-git stash list
-gstp
-
-git stash pop
-gsts
-
-git stash show --text
-gstu
-
-git stash --include-untracked
-gstall
-
-git stash --all
-gsu
-
-git submodule update
-gsw
-
-git switch
-gswc
-
-git switch -c
-gswm
-
-git switch $(git_main_branch)
-gswd
-
-git switch $(git_develop_branch)
-gts
-
-git tag -s
-gtv
-
-git tag | sort -V
-gtl
-
-gtl(){ git tag --sort=-v:refname -n -l ${1}* }; noglob gtl
-gunignore
-
-git update-index --no-assume-unchanged
-gunwip
-
-git log -n 1 | grep -q -c "--wip--" && git reset HEAD~1
-gup
-
-git pull --rebase
-gupv
-
-git pull --rebase -v
-gupa
-
-git pull --rebase --autostash
-gupav
-
-git pull --rebase --autostash -v
-gupom
-
-git pull --rebase origin $(git_main_branch)
-gupomi
-
-git pull --rebase=interactive origin $(git_main_branch)
-glum
-
-git pull upstream $(git_main_branch)
-gluc
-
-git pull upstream $(git_current_branch)
-gwch
-
-git whatchanged -p --abbrev-commit --pretty=medium
-gwip
-
-git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign -m "--wip-- [skip ci]"
-gam
-
-git am
-gamc
-
-git am --continue
-gams
-
-git am --skip
-gama
-
-git am --abort
-gamscp
-
-git am --show-current-patch
+- `gk` - Alias for `git
